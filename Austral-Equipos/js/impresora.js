@@ -35,7 +35,7 @@ function tabla_elementos(element,index, arr){
         </td>
         <td class="px-6 py-4">
             <a href="actualizar_impre.html?id=${element.idimpresora}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-            <a href="eliminar.html?id=${element.idimpresora}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+            <a href="eliminar_impre.html?id=${element.idimpresora}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
         </td>
     </tr>`
 }
@@ -119,13 +119,13 @@ function obtener_datos(p_id_impresora){
          .catch(error => console.log('error', error));
 }
 
-function mostrarDatos(){
+function mostrarDatos(element){
 
-    document.getElementById("txt_marca").value = element.marca_impre;
-    document.getElementById("txt_modelo").value= element.modelo_impre;
-    document.getElementById("txt_conexion").value = element.tipo_conexion;
-    document.getElementById("txt_numero_ip").value= element.numero_ip;
-    document.getElementById("txt_descripcion").value = element.desc_impresora;
+    document.getElementById("txt_marca").value = element.marca_impre
+    document.getElementById("txt_modelo").value= element.modelo_impre
+    document.getElementById("txt_conexion").value = element.tipo_conexion
+    document.getElementById("txt_numero_ip").value= element.numero_ip
+    document.getElementById("txt_descripcion").value = element.desc_impresora
 
 }
 
