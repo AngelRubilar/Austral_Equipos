@@ -23,7 +23,7 @@
             <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Austral</span>
           </a>
         </div>
-        <h2 class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Listado de anexos</h2>
+        <h2 class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Actualizar Impresora</h2>
         <div class="flex items-center">
             <div class="flex items-center ml-3">
               <div>
@@ -159,27 +159,27 @@
 <form class="p-4 sm:ml-64 mt-14 mr-6">
    <div class="grid gap-6 mb-6 md:grid-cols-2 mt-8 mr-5">
        <div>
-           <label for="txt_marca" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Codigo Departamento</label>
-           <input type="text" id="txt_marca" aria-label="disabled input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-not-allowed"  disabled>
+           <label for="txt_marca" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca Impresora</label>
+           <input type="text" id="txt_marca" aria-label="disabled input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
        </div>
        <div>
-           <label for="txt_modelo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Departamento</label>
-           <input type="text" id="txt_modelo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-not-allowed" disabled>
+           <label for="txt_modelo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo Impresora</label>
+           <input type="text" id="txt_modelo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
        </div>
        <div>
-            <label for="txt_conexion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Departamento</label>
-            <input type="text" id="txt_conexion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-not-allowed" disabled>
+            <label for="txt_conexion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de conexión</label>
+            <input type="text" id="txt_conexion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+       </div><!--  -->
+       <div>
+            <label for="txt_numero_ip" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero Ip </label>
+            <input type="text" id="txt_numero_ip" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
        </div>
        <div>
-            <label for="txt_numero_ip" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Departamento</label>
-            <input type="text" id="txt_numero_ip" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-not-allowed" disabled>
-       </div>
-       <div>
-        <label for="txt_descripcion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Departamento</label>
-        <input type="text" id="txt_descripcion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-not-allowed" disabled>
+        <label for="txt_descripcion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
+        <input type="text" id="txt_descripcion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
    </div>
    </div>
-   <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Eliminar</button>
+   <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Actualizar</button>
    <a href="impresora.html"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button></a>
 </form>
 
