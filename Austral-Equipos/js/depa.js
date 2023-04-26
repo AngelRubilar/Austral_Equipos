@@ -103,9 +103,7 @@ function obtener_datos(p_id_departamento){
    
    fetch("http://147.182.212.216:"+puerto+"/api/departamento/"+p_id_departamento, requestOptions)
      .then((response) => response.json())
-     .then((json) => json.forEach(mostrarDatos)
-     )
- 
+     .then((json) => json.forEach(mostrarDatos)) 
      .then(result => console.log(result))
      .catch(error => console.log('error', error));
  };

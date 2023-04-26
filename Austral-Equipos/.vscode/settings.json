@@ -12,5 +12,6 @@
             "database": "equipo",
             "username": "angel"
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
