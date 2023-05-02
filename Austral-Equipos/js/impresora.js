@@ -1,5 +1,7 @@
+const link = 'http://157.230.48.161:';
 const puerto = 3000;
 let g_id_impresora = 0;
+
 
 function listar(){
     var requestOptions = {
@@ -7,7 +9,7 @@ function listar(){
         redirect: 'follow'
       };
       
-      fetch("http://147.182.212.216:"+puerto+"/api/impresora", requestOptions)
+      fetch(link+puerto+"/api/impresora", requestOptions)
         .then((response) => response.json())
         .then((json) => json.forEach(tabla_elementos))    
         .then(result => console.log(result))
@@ -67,7 +69,7 @@ function agregarImpre(){
         redirect: 'follow'
       };
 
-      fetch("http://147.182.212.216:"+puerto+"/api/impresora", requestOptions)
+      fetch(link+puerto+"/api/impresora", requestOptions)
     .then (response => {
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML =
@@ -110,7 +112,7 @@ function obtener_datos(p_id_impresora){
         redirect: 'follow'
        };
        
-       fetch("http://147.182.212.216:"+puerto+"/api/impresora/"+p_id_impresora, requestOptions)
+       fetch(link+puerto+"/api/impresora/"+p_id_impresora, requestOptions)
          .then((response) => response.json())
          .then((json) => json.forEach(mostrarDatos)
          )
@@ -135,7 +137,7 @@ function eliminar(){
         redirect:"follow"
     }
 
-    fetch("http://147.182.212.216:"+puerto+"/api/impresora/"+g_id_impresora, requestOptions)
+    fetch(link+puerto+"/api/impresora/"+g_id_impresora, requestOptions)
     .then(response => {
         if(response.status ==200){
             document.querySelector("#mensaje_modal").innerHTML +=
@@ -184,7 +186,7 @@ function actualizarImpre(){
         redirect: 'follow'
       };
 
-      fetch("http://147.182.212.216:"+puerto+"/api/impresora/"+g_id_impresora, requestOptions)
+      fetch(link+puerto+"/api/impresora/"+g_id_impresora, requestOptions)
     .then (response => {
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML =

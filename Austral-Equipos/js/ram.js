@@ -1,4 +1,5 @@
 let g_id_ram = 0
+const link = 'http://157.230.48.161:';
 const puerto = 3000
 
 
@@ -6,7 +7,7 @@ function listado(){
 
 const options = {method: 'GET'};
 
-fetch('http://147.182.212.216:'+puerto+'/api/ram', options)
+fetch(link+puerto+'/api/ram', options)
 .then((response) => response.json())
 .then((json) => json.forEach(mostrarDatos))    
 .then(result => console.log(result))
@@ -60,7 +61,7 @@ function obtener_datos(p_id_ram){
         redirect :'follow'    
     };
 
-    fetch('http://147.182.212.216:3000/api/ram/'+p_id_ram, requestOptions)
+    fetch(link+puerto+'/api/ram/'+p_id_ram, requestOptions)
     .then((response) => response.json())
     .then ((json) => json.forEach(cargarDatos))
     .then ((result) => console.log(result))
@@ -86,7 +87,7 @@ function elimnar(){
     }
 
 
-    fetch('http://147.182.212.216:3000/api/ram/'+g_id_ram, requestOptions)
+    fetch(link+puerto+'/api/ram/'+g_id_ram, requestOptions)
     .then (response => {
         if(response.status == 200){
         document.querySelector('#mensaje_modal').innerHTML +=
@@ -138,7 +139,7 @@ function actualizar_ram(){
             redirect: 'follow'
         };
         
-        fetch('http://147.182.212.216:3000/api/ram/'+g_id_ram, requestOptions)
+        fetch(link+puerto+'/api/ram/'+g_id_ram, requestOptions)
         .then (response => {
             if(response.status == 200){
             document.querySelector('#mensaje_modal').innerHTML +=
@@ -189,7 +190,7 @@ function agregarRam(){
         redirect: 'follow'
     }
 
-    fetch("http://147.182.212.216:"+puerto+"/api/ram", requestOptions)
+    fetch(link+puerto+"/api/ram", requestOptions)
     .then (response => {
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML = 
