@@ -3,7 +3,7 @@
 <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
-    <script src="/js/procesador.js"></script>
+    <script src="/js/mother.js"></script>
     <title>Document</title>
 </head>
 <body onload="obtenerId();">
@@ -161,33 +161,17 @@
    <form class="p-4 sm:ml-64 mt-10 mr-8">
     <div class="grid gap-6 mb-6 md:grid-cols-2 mt-14 ml-6">
        <div>
-          <label for="txt_marca_proce" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca Impresora</label>
-          <input type="text" id="txt_marca_proce" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\.5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Epson" required>
+          <label for="txt_marca_mother" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca Motherboard</label>
+          <input type="text" id="txt_marca_mother" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\.5 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" disabled>
       </div>
        <div>
-              <label for="txt_modelo_proce" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo Impresora</label>
-              <input type="text" id="txt_modelo_proce" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="L315" required>
+              <label for="txt_modelo_mother" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo </label>
+              <input type="text" id="txt_modelo_mother" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" disabled>
         </div>
-        <div>
-            <label for="txt_socket_proce" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo Impresora</label>
-            <input type="text" id="txt_socket_proce" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="L315" required>
-      </div>
-        <div>
-            <label for="txt_velocidad_proce" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero Ip</label>
-            <input type="text" id="txt_velocidad_proce" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="10.10.158.xxx" required>
-        </div>
-        <div>
-            <label for="txt_nucleo_fisico class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
-            <input type="text" id="txt_nucleo_fisico" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Impresora ventas 50" required>
-        </div>
-        <div>
-            <label for="txt_nucleo_logico class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
-            <input type="text" id="txt_nucleo_logico" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2\/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Impresora ventas 50" required>
-        </div>
-    </div>        
+     </div>        
     <div class="ml-6 pt-10">
        <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agregar</button>
-       <a href="procesador.html"><button type="button" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cancelar</button> </a>
+       <a href="mother.html"><button type="button" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cancelar</button> </a>
     </div>
  </form>
 
@@ -203,7 +187,7 @@
                <!-- <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>-->
                <img src="/img/pregunta.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Estas seguro de querer Agregar la impresora</h3>
-                <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" onclick="actualizar()">
+                <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" onclick="eliminar()">
                     Aceptar
                 </button>
                 <button data-modal-hide="popup-modal"  type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>

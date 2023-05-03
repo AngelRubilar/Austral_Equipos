@@ -168,7 +168,54 @@ function actualizar(){
     fetch(link+puerto+'/api/procesador/'+g_id_procesador, requestOptions)
     .then ((response) => {
         if(response.status == 200){
-            
-        }
+            document.querySelector("#mensaje_modal").innerHTML +=
+            `  <img src="/img/correcto.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los cambios fueron realizados exitosamente !!!</h3>
+                <a href="impresora.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                    Aceptar
+                    </button></a>                      
+            `;
+          }else{
+            document.querySelector('#mensaje_modal').innerHTML +=
+            `<img src="/img/error.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+              <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Lo sentimos, no es posible realizar la operación en estos momentos.</h3>
+              <a href="impresora.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                  Aceptar
+                  </button></a>          
+            `; 
+            };
     })
+}
+
+function eliminar(){
+
+    var requestOptions = {
+        method :'DELETE',
+        redirect : 'follow'
+    }
+
+
+    fetch(link+puerto+'/api/ram/'+g_id_procesador, requestOptions)
+    .then (response => {
+        if(response.status == 200){
+        document.querySelector('#mensaje_modal').innerHTML +=
+        `  <img src="/img/correcto.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los cambios fueron realizados exitosamente !!!</h3>
+            <a href="procesador.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                Aceptar
+                </button></a>                      
+        `;
+      }else{
+        document.querySelector('#mensaje_modal').innerHTML +=
+        `<img src="/img/error.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Lo sentimos, no es posible realizar la operación en estos momentos.</h3>
+          <a href="procesador.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+              Aceptar
+              </button></a>          
+        `;          
+    }
+    })
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
 }
