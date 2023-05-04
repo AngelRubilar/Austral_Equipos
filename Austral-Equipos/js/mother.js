@@ -62,13 +62,125 @@ function mostrarDatos(element){
 }
 
 function eliminar(){
+    var requestOptions ={
+        method : 'DELETE',
+        redirect:'follow'
+      }
+    
+      fetch(link+puerto+"/api/motherboard/"+g_id_mother, requestOptions)
+      .then(response => {
+        if (response.status == 200){
+          document.querySelector('#mensaje_modal').innerHTML +=
+          `<img src="/img/correcto.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los datos fueron eliminados exitosamente !!!</h3>
+          <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+              Aceptar
+              </button></a>       
+          `;
+        }else{
+          document.querySelector('#mensaje_modal').innerHTML +=
+          ` 
+              <img src="/img/error.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Lo sentimos, no es posible realizar la operación en estos momentos.</h3>
+                <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                    Aceptar
+                    </button></a> 
+          `;
+        };
+      })
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
 
 }
 
 function actualizar(){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
+    var marca_mother = document.getElementById('txt_marca_mother').value
+    var modelo_mother = document.getElementById('txt_marca_mother').value
+
+    var raw = JSON.stringify({
+        "marca_mother": marca_mother,
+        "modelo_marca": modelo_mother
+    })
+
+    var requestOptions = {
+        method : 'PATCH',
+        headers : myHeaders,
+        body: raw,
+        redirect : 'follow'
+    }
+
+    fetch(link+puerto+"/api/motherboard/"+g_id_mother, requestOptions)
+    .then ((response) =>{
+        if (response.status == 200){
+            document.querySelector('#mensaje_modal').innerHTML +=
+          `  <img src="/img/correcto.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+              <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los cambios fueron realizados exitosamente !!!</h3>
+              <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                  Aceptar
+                  </button></a>                      
+          `;
+ 
+        }else{
+          document.querySelector('.mensaje-_modal').innerHTML +=
+          `<img src="/img/error.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Lo sentimos, no es posible realizar la operación en estos momentos.</h3>
+            <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                Aceptar
+                </button></a>          
+          `; 
+        }
+    })
 }
 
 function agregar(){
+    var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var marca = document.getElementById('txt_marca').value;
+  var modelo = document.getElementById('txt_modelo').value;
+   
+
+  var raw = JSON.stringify({
+     "marca_mother" : marca,
+     "modelo_mother": modelo,
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+ 
+  fetch(link+puerto+"/api/motherboard", requestOptions)
+  .then(response => {
+    if(response.status == 200 ){
+      document.querySelector('#agregar_modal').innerHTML=
+      `<img src="/img/correcto.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los datos fueron agregados exitosamente !!!</h3>
+      <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+          Aceptar
+          </button></a> 
+      
+      `;
+    }else{
+      document.querySelector('#agregar_modal').innerHTML +=
+      `
+      <img src="/img/error.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Lo sentimos, no es posible realizar la operación en estos momentos.</h3>
+            <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                Aceptar
+                </button></a>
+      `; 
+    }
+  })
+  
+     .then(result => console.log(result))
+     .catch(error => console.log('error', error));
+
+
     
 }
