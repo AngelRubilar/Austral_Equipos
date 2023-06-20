@@ -1,6 +1,6 @@
-let g_id_anexo=0;
-var puerto = 3000;
 
+const direccion = 'http://192.168.135.133:3000';
+let g_id_anexo=0;
 // listar anexos desde base de datos
 function listar(){
     var requestOptions = {
@@ -8,7 +8,7 @@ function listar(){
         redirect: 'follow'
       };
       
-      fetch("http://147.182.212.216:"+puerto+"/api/anexos?_size=80", requestOptions)
+      fetch(direccion+"/api/anexos?_size=80", requestOptions)
         .then((response) => response.json())
         .then((json) => json.forEach(tabla_elementos))    
         .then(result => console.log(result))
@@ -16,6 +16,7 @@ function listar(){
 }
 
 function tabla_elementos (element, index, arr){
+  console.log (element)
     arr[index] = document.querySelector('#cnt_tabla tbody').innerHTML +=
     `<tr>
     
@@ -40,7 +41,6 @@ function tabla_elementos (element, index, arr){
         </td>
     </tr>`
 }
-
 // botenemos los datos desde la url 
 function obtenerId(){
     // obtenemos los datos de la URL Actual
@@ -61,7 +61,7 @@ function obtenerId(){
          redirect: 'follow'
         };
         
-        fetch("http://147.182.212.216:"+puerto+"/api/anexos/"+p_id_cliente, requestOptions)
+        fetch(direccion+"/api/anexos/"+p_id_cliente, requestOptions)
           .then((response) => response.json())
           .then((json) => json.forEach(mostrarDatos)
           )
@@ -114,7 +114,7 @@ function actualizarDatos (){
 
       
 
-      fetch("http://147.182.212.216:"+puerto+"/api/anexos/"+g_id_anexo, requestOptions)
+      fetch(direccion+"/api/anexos/"+g_id_anexo, requestOptions)
       .then(response => {
         if(response.status == 200){  
           document.querySelector('#mensaje_modal').innerHTML +=
@@ -145,7 +145,7 @@ function eliminar(){
     redirect:'follow'
   }
 
-  fetch("http://147.182.212.216:"+puerto+"/api/anexos/"+g_id_anexo, requestOptions)
+  fetch(direccion+"/api/anexos/"+g_id_anexo, requestOptions)
   .then(response => {
     if (response.status == 200){
       document.querySelector('#mensaje_modal').innerHTML +=
@@ -168,13 +168,10 @@ function eliminar(){
   })
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-
 };
 
 function agregar(){
-
   //crear el headders para pasar a json
-
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -199,7 +196,7 @@ function agregar(){
     redirect: 'follow'
   };
  
-  fetch("http://147.182.212.216:"+puerto+"/api/anexos", requestOptions)
+  fetch(direccion+"/api/anexos", requestOptions)
   .then(response => {
     if(response.status == 200 ){
       document.querySelector('#agregar_modal').innerHTML=

@@ -1,13 +1,11 @@
+const direccion = 'http://192.168.135.133:3000';
 let g_id_ram = 0
-const link = 'http://157.230.48.161:';
-const puerto = 3000
-
 
 function listado(){
 
 const options = {method: 'GET'};
 
-fetch(link+puerto+'/api/ram', options)
+fetch(direccion+'/api/ram', options)
 .then((response) => response.json())
 .then((json) => json.forEach(mostrarDatos))    
 .then(result => console.log(result))
@@ -33,8 +31,8 @@ function mostrarDatos (element, index, arr){
             ${element.capacidad_ram}
         </td>
         <td class="px-6 py-4">
-            <a href="actualizar_ram.html?id=${element.idram}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-            <a href="eliminar_ram.html?id=${element.idram}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+            <a href="actualizar_ram.html?id=${element.id_ram}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+            <a href="eliminar_ram.html?id=${element.id_ram}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
         </td>
     
 </tr>`;
@@ -61,9 +59,9 @@ function obtener_datos(p_id_ram){
         redirect :'follow'    
     };
 
-    fetch(link+puerto+'/api/ram/'+p_id_ram, requestOptions)
+    fetch(direccion+'/api/ram/'+p_id_ram, requestOptions)
     .then((response) => response.json())
-    .then ((json) => json.forEach(cargarDatos))
+    .then((json) => json.forEach(cargarDatos))
     .then ((result) => console.log(result))
     .catch(error => console.log('error', error));
 
@@ -71,15 +69,16 @@ function obtener_datos(p_id_ram){
 }
 
 function cargarDatos(element){
-
+    console.log(element)
     document.getElementById("txt_marca_ram").value = element.marca_ram;
     document.getElementById("txt_modelo_ram").value = element.modelo_ram;
     document.getElementById("txt_tecnologia_ram").value = element.tecnologia_ram;
     document.getElementById("txt_frecuencia_ram").value = element.frecuencia_ram;
     document.getElementById("txt_capacidad_ram").value = element.capacidad_ram;
+
 }
 
-function elimnar(){
+function eliminar(){
 
     var requestOptions = {
         method :'DELETE',
@@ -87,7 +86,7 @@ function elimnar(){
     }
 
 
-    fetch(link+puerto+'/api/ram/'+g_id_ram, requestOptions)
+    fetch(direccion+'/api/ram/'+g_id_ram, requestOptions)
     .then (response => {
         if(response.status == 200){
         document.querySelector('#mensaje_modal').innerHTML +=
@@ -139,7 +138,7 @@ function actualizar_ram(){
             redirect: 'follow'
         };
         
-        fetch(link+puerto+'/api/ram/'+g_id_ram, requestOptions)
+        fetch(direccion+'/api/ram/'+g_id_ram, requestOptions)
         .then (response => {
             if(response.status == 200){
             document.querySelector('#mensaje_modal').innerHTML +=
@@ -171,7 +170,7 @@ function agregarRam(){
 
     var marca_ram = document.getElementById("txt_marca_ram").value
     var modelo_ram = document.getElementById("txt_modelo_ram").value
-    var tecnologia_ram = docuement.getElementById("txt_tecnologia_ram").value
+    var tecnologia_ram = document.getElementById("txt_tecnologia_ram").value
     var frecuencia_ram = document.getElementById("txt_frecuencia_ram").value
     var capacidad_ram = document.getElementById("txt_capacidad_ram").value
 
@@ -190,13 +189,13 @@ function agregarRam(){
         redirect: 'follow'
     }
 
-    fetch(link+puerto+"/api/ram", requestOptions)
+    fetch(direccion+"/api/ram", requestOptions)
     .then (response => {
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML = 
             `<img src="/img/correcto.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los datos fueron agregados exitosamente !!!</h3>
-            <a href="departamento.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+            <a href="ram.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                 Aceptar
                 </button></a>
             `;
@@ -204,7 +203,7 @@ function agregarRam(){
             document.querySelector('#agregar_modal').innerHTML +=
             `<img src="/img/error.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Lo sentimos, no es posible realizar la operación en estos momentos.</h3>
-            <a href="departamento.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+            <a href="ram.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                 Aceptar
                 </button></a>
       `; 
@@ -214,9 +213,3 @@ function agregarRam(){
          .catch(error => console.log('error', error));
    
 }
-
-
-
-
-
-

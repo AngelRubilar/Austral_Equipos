@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script src="/js/equipo.js"></script>
+    <title>Equipos</title>
+</head>
+<body onload="cargarFunciones();">
+   
+<nav class="fixed top-0 z-50 w-full bg-gray-100">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
+           </button>
+          <a href="/index.html" class="flex ml-2 md:mr-24">
+            <img src="/img/logo-austral.png" class="h-8 mr-3" alt="Austral Logo" />
+            <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Austral</span>
+          </a>
+        </div>
+        <div class="flex items-center">
+            <div class="flex items-center ml-3">
+              <div>
+                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                </button>
+              </div>
+              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm text-gray-900 dark:text-white" role="none">
+                    Neil Sims
+                  </p>
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                    neil.sims@flowbite.com
+                  </p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</nav>
+
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+       <ul class="space-y-2 font-medium">
+          <li>
+             <a href="partes/motherboard/mother.html" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                <svg aria-hidden="true" class="w-2 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><img src="/img/placamadre.png" width="40" alt=""></svg>
+                <span class="ml-3">Motherboard</span>
+             </a>
+          </li>
+          <li>
+           <a href="partes/procesador/procesador.html" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+               <svg aria-hidden="true" class="flex-shrink-0 w-2 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><img src="/img/procesador.png" width="40" alt=""></svg>
+                 <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Procesador</span>
+           </a>
+        </li>
+        <li>
+           <a href="partes/ram/ram.html" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-equipo" data-collapse-toggle="dropdown-equipo">
+               <svg fill="currentColor"  class="flex-shrink-0 w-2 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <img src="/img/ram.png" width="40" alt="memoria ram">
+               </svg>
+                 <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Ram</span>
+           </a>
+        </li>
+        <li>
+           <a href="partes/discos/listar_discos.html" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-anexos" data-collapse-toggle="dropdown-anexos">
+                 <svg aria-hidden="true" class="flex-shrink-0 w-2 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                 <img src="/img/disco_duro.png" width="40" alt="">
+                </svg>
+                 <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Discos Duros</span>
+            </a>
+        </li>
+        <li>
+           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-impresora" data-collapse-toggle="dropdown-impresora">
+              <svg aria-hidden="true" class="flex-shrink-0 w-2 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <img src="/img/punto_de_red.png" width="40" alt="">
+              </svg>
+             <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Punto de red</span>
+            </a>
+        </li>
+        </li>
+       </ul>
+    </div>
+</aside>
+
+<h2 class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white flex items-center justify-center mt-14 p-4">Agregar un nuevo equipo</h2>
+<form class="p-4 sm:ml-64 mt-8 mr-8">
+    <div class="grid gap-6 mb-6 md:grid-cols-4 ml-6">
+        <div>
+            <label for="nombre_equipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Equipo</label>
+            <input type="text" id="cnt_nombre_equipo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-44 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="AustralXX" required>
+        </div>
+        <div>
+            <label for="ip_equipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ip</label>
+            <input type="text" id="cnt_ip_equipo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="10.10.158.255" required>
+        </div>
+        <div>
+            <label for="cnt_dominio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dominio</label>
+            <input type="text" id="cnt_dominio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Recasur.1" required>
+        </div>
+    </div>
+    <div class="grid gap-6 mb-6 md:grid-cols-2 mt-10 ml-6">
+        <div>
+            <label for="cnt_tipo_equipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de Equipo</label>
+            <select id="cnt_tipo_equipo" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            <option value="" >Seleccione el tipo de equipo</option>
+            </select>
+         </div>
+        <div>
+            <label for="cnt_estado_equipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado del Equipo</label>
+            <select id="cnt_estado_equipo" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            <option value="">Seleccione el estado del equipo</option>   
+            </select>
+        </div>
+        <div>
+         <label for="cnt_mother" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Placa Madre</label>
+         <select id="cnt_mother" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+         <option  value="" class="data">Seleccione una Placa madre</option>   
+         </select>
+       </div>
+       <div>
+         <label for="cnt_proce" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Procesador</label>
+         <select id="cnt_proce" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+         <option selected="cnt_proce" value="">Seleccione un Procesador</option>   
+         </select>
+       </div>
+       <div>
+         <label for="cnt_ram" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ram</label>
+         <select id="cnt_ram" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+         <option value="">Seleccione una Ram</option>   
+         </select>
+       </div>
+       <div>
+         <label for="cnt_disco" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Disco</label>
+         <select id="cnt_disco" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+         <option selected="cnt_disco">Seleccione un Disco</option>   
+         </select>
+       </div>
+       <div>
+        <label for="cnt_punto_red" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Punto de red</label>
+        <select id="cnt_punto_red" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        <option >Seleccione un Punto de Red</option>   
+        </select>
+      </div>
+    </div>
+    <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="ml-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Agregar</button>
+</form>
+
+ <!--modal 1 pregunta de confirmacion para la modificacion de datos  -->
+ <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-md max-h-full">
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="popup-modal">
+              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              <span class="sr-only">Close modal</span>
+          </button>
+          <div class="p-6 text-center">
+             <!-- <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>-->
+             <img src="/img/pregunta.png" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200">
+             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Estas seguro de querer Agregar este Equipo</h3>
+              <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" onclick="agregarEquipo()">
+                  Aceptar
+              </button>
+              <button data-modal-hide="popup-modal"  type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!--modal 2 mensaje de error o positivo, con respecto a la modificacion de los datos -->
+<div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-md max-h-full">
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <div class="p-6 text-center" id="mensaje_modal"></div>
+        
+      </div>
+  </div>
+</div>  
+</body>
+</html>

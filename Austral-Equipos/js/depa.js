@@ -1,5 +1,6 @@
-const puerto = 3000
-let g_id_departamento = 0
+
+const direccion = 'http://192.168.135.133:3000';
+let g_id_departamento = 0;
 
 // listar anexos desde base de datos
 function listar(){
@@ -8,7 +9,7 @@ function listar(){
         redirect: 'follow'
       };
       
-      fetch("http://147.182.212.216:"+puerto+"/api/departamento", requestOptions)
+      fetch(direccion+"/api/departamento", requestOptions)
         .then((response) => response.json())
         .then((json) => json.forEach(tabla_elementos))    
         .then(result => console.log(result))
@@ -32,8 +33,6 @@ function tabla_elementos (element, index, arr){
         </td>
     </tr>`
 }
-
-
 // funcion para agregar departamentos
 function AgregarDepto(){
 
@@ -55,7 +54,7 @@ function AgregarDepto(){
         redirect: 'follow'
       };
 
-      fetch("http://147.182.212.216:"+puerto+"/api/departamento", requestOptions)
+      fetch(direccion+"/api/departamento", requestOptions)
       .then(response =>{
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML =
@@ -94,14 +93,13 @@ function obtenerId(){
 
 }
 
-
 function obtener_datos(p_id_departamento){
     var requestOptions = {
     method: 'GET',
     redirect: 'follow'
    };
    
-   fetch("http://147.182.212.216:"+puerto+"/api/departamento/"+p_id_departamento, requestOptions)
+   fetch(direccion+"/api/departamento/"+p_id_departamento, requestOptions)
      .then((response) => response.json())
      .then((json) => json.forEach(mostrarDatos)) 
      .then(result => console.log(result))
@@ -120,7 +118,7 @@ function eliminar(){
         redirect:'follow'
       }
    
-    fetch("http://147.182.212.216:"+puerto+"/api/departamento/"+g_id_departamento, requestOptions)
+    fetch(direccion+"/api/departamento/"+g_id_departamento, requestOptions)
     .then (response => {
         if(response.status == 200){
         document.querySelector("#mensaje_modal").innerHTML +=
@@ -165,7 +163,7 @@ function actualizarDatos(){
         redirect: 'follow'
       };
 
-      fetch("http://147.182.212.216:"+puerto+"/api/departamento/"+g_id_departamento, requestOptions)
+      fetch(direccion+"/api/departamento/"+g_id_departamento, requestOptions)
       .then(response =>{    
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML =

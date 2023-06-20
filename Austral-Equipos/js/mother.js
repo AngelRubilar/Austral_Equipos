@@ -1,3 +1,5 @@
+const direccion = 'http://192.168.135.133:3000';
+let g_id_mother = 0;
 
 function listar(){
     var requestOptions = {
@@ -5,17 +7,18 @@ function listar(){
         redirect: 'follow'
     }
 
-    fetch(link+puerto+'/api/motherboard', requestOptions)
+    fetch(direccion+'/api/motherboard', requestOptions)
     .then((response) => response.json())
     .then((json) => json.forEach(tabla_elementos))    
     .then(result => console.log(result))
-    .catch(error => console.log('error', error))
-
+    .catch(error => console.log('error', error));
+  
+  }
 
 function tabla_elementos(element, index, arr){
-    arr[index] = document.getElementById("#cnt_tabla tbody").innerHTML +=
-        `<tr>
-    
+  console.log(element)
+    arr[index] = document.querySelector("#cnt_tabla tbody").innerHTML +=
+        `<tr>    
             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 ${element.marca_mother}
             </th>
@@ -23,12 +26,12 @@ function tabla_elementos(element, index, arr){
                 ${element.modelo_mother}
             </td>
             <td class="px-6 py-4">
-                <a href="actualizar_impre.html?id=${element.id_motherboard}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                <a href="actualizar_mother.html?id=${element.id_motherboard}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                 <a href="eliminar_mother.html?id=${element.id_motherboard}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
             </td>
     </tr>`
     }
-}
+
 
 function obtenerId(){
     // obtenemos los datos de la URL Actual
@@ -36,7 +39,7 @@ function obtenerId(){
     // obtenemos los parámetros de la URL
     var urlParams = new URLSearchParams(queryString);
     //obtenemos el id del cliente
-    var p_id_impresora = urlParams.get("id");
+    var p_id_mother = urlParams.get("id");
     // Asignamos un valor a variable global
     g_id_mother = p_id_mother
     //Invocamos funcion para obtener datos desde API REST
@@ -49,7 +52,7 @@ function obtener_datos(p_id_mother){
         redirect: 'follow'
        };
        
-       fetch(link+puerto+"/api/motherboard/"+p_id_mother, requestOptions)
+       fetch(direccion+"/api/motherboard/"+p_id_mother, requestOptions)
          .then((response) => response.json())
          .then((json) => json.forEach(mostrarDatos))     
          .then(result => console.log(result))
@@ -67,7 +70,7 @@ function eliminar(){
         redirect:'follow'
       }
     
-      fetch(link+puerto+"/api/motherboard/"+g_id_mother, requestOptions)
+      fetch(direccion+"/api/motherboard/"+g_id_mother, requestOptions)
       .then(response => {
         if (response.status == 200){
           document.querySelector('#mensaje_modal').innerHTML +=
@@ -90,7 +93,6 @@ function eliminar(){
       })
           .then(result => console.log(result))
           .catch(error => console.log('error', error));
-
 }
 
 function actualizar(){
@@ -102,7 +104,7 @@ function actualizar(){
 
     var raw = JSON.stringify({
         "marca_mother": marca_mother,
-        "modelo_marca": modelo_mother
+        "modelo_mother": modelo_mother
     })
 
     var requestOptions = {
@@ -112,7 +114,7 @@ function actualizar(){
         redirect : 'follow'
     }
 
-    fetch(link+puerto+"/api/motherboard/"+g_id_mother, requestOptions)
+    fetch(direccion+"/api/motherboard/"+g_id_mother, requestOptions)
     .then ((response) =>{
         if (response.status == 200){
             document.querySelector('#mensaje_modal').innerHTML +=
@@ -155,7 +157,7 @@ function agregar(){
     redirect: 'follow'
   };
  
-  fetch(link+puerto+"/api/motherboard", requestOptions)
+  fetch(direccion+"/api/motherboard", requestOptions)
   .then(response => {
     if(response.status == 200 ){
       document.querySelector('#agregar_modal').innerHTML=
@@ -163,8 +165,7 @@ function agregar(){
       <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Felicidades, los datos fueron agregados exitosamente !!!</h3>
       <a href="mother.html"><button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
           Aceptar
-          </button></a> 
-      
+          </button></a>       
       `;
     }else{
       document.querySelector('#agregar_modal').innerHTML +=
@@ -179,8 +180,5 @@ function agregar(){
   })
   
      .then(result => console.log(result))
-     .catch(error => console.log('error', error));
-
-
-    
+     .catch(error => console.log('error', error));    
 }

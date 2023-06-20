@@ -1,7 +1,7 @@
-const link = 'http://157.230.48.161:';
+const direccion = 'http://192.168.135.133:3000';
+
 const puerto = 3000;
 let g_id_impresora = 0;
-
 
 function listar(){
     var requestOptions = {
@@ -9,7 +9,7 @@ function listar(){
         redirect: 'follow'
       };
       
-      fetch(link+puerto+"/api/impresora", requestOptions)
+      fetch(direccion+"/api/impresora", requestOptions)
         .then((response) => response.json())
         .then((json) => json.forEach(tabla_elementos))    
         .then(result => console.log(result))
@@ -42,7 +42,6 @@ function tabla_elementos(element,index, arr){
     </tr>`
 }
 
-
 function agregarImpre(){
 
     var myHeaders = new Headers();
@@ -69,7 +68,7 @@ function agregarImpre(){
         redirect: 'follow'
       };
 
-      fetch(link+puerto+"/api/impresora", requestOptions)
+      fetch(direccion+"/api/impresora", requestOptions)
     .then (response => {
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML =
@@ -112,7 +111,7 @@ function obtener_datos(p_id_impresora){
         redirect: 'follow'
        };
        
-       fetch(link+puerto+"/api/impresora/"+p_id_impresora, requestOptions)
+       fetch(direccion+"/api/impresora/"+p_id_impresora, requestOptions)
          .then((response) => response.json())
          .then((json) => json.forEach(mostrarDatos)
          )
@@ -137,7 +136,7 @@ function eliminar(){
         redirect:"follow"
     }
 
-    fetch(link+puerto+"/api/impresora/"+g_id_impresora, requestOptions)
+    fetch(direccion+"/api/impresora/"+g_id_impresora, requestOptions)
     .then(response => {
         if(response.status ==200){
             document.querySelector("#mensaje_modal").innerHTML +=
@@ -186,7 +185,7 @@ function actualizarImpre(){
         redirect: 'follow'
       };
 
-      fetch(link+puerto+"/api/impresora/"+g_id_impresora, requestOptions)
+      fetch(direccion+"/api/impresora/"+g_id_impresora, requestOptions)
     .then (response => {
         if(response.status == 200){
             document.querySelector("#mensaje_modal").innerHTML =

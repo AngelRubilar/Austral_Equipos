@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
-    <script src="/js/mother.js"></script>
+    <script src="/js/disco.js"></script>
     <title>Equipos</title>
 </head>
-<body onload="listar();">
+<body onload="listar()">
     <!--barra de navegacion -->
     <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -40,7 +40,7 @@
                         Neil Sims
                       </p>
                       <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                        neil.sims@flowbite.com
+                        arubilar@representacionesaustral.cl
                       </p>
                     </div>
                     <ul class="py-1" role="none">
@@ -68,7 +68,7 @@
       <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
          <ul class="space-y-2 font-medium">
             <li>
-               <a href="mother.html" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+               <a href="/Equipos/partes/motherboard/mother.html" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <svg aria-hidden="true" class="w-2 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><img src="/img/placamadre.png" width="40" alt=""></svg>
                   <span class="ml-3">Motherboard</span>
                </a>
@@ -108,22 +108,25 @@
       </div>
    </aside>
    
-  <div class="mt-10 pt-10 flex items-center justify-center">
-    <h2 class=" self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Listado Motherboard</h2>
-  </div>
+   <div class="mt-10 pt-10 flex items-center justify-center">
+      <h2 class=" self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Listado Discos Duros</h2>
+    </div>
 
-<!--Galeria de fotos de acceso -->
-<div class="p-2 sm:ml-64">
+<!--Tabla de datos -->
+<div class="p-4 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-8">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="cnt_tabla">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            Marca Motherboard
+                            Marca Disco Duro
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Modelo Modelo
+                            Modelo Disco Duro
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Capacidad
                         </th>
                         <th scope="col" class="px-6 py-3">
                            Opciones
@@ -164,7 +167,7 @@
            Download
            <div class="tooltip-arrow" data-popper-arrow></div>
        </div>
-       <a href="agregar_mother.html">
+       <a href="agregar_discos.html">
        <button type="button" data-tooltip-target="tooltip-copy" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path></svg>
            <span class="sr-only">Agregar</span>
